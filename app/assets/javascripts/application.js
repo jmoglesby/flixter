@@ -11,6 +11,11 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+$(function () {
+  $(".notice-box").delay( 1500 ).slideUp();
+});
