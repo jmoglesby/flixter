@@ -35,8 +35,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'popper_js', '~> 1.11.1'
-gem 'bootstrap', '4.0.0.alpha6'
+gem 'popper_js', '< 2', '>= 1.14.3'
+gem 'bootstrap', '4.3.1'
 gem 'font-awesome-rails'
 gem 'simple_form'
 
