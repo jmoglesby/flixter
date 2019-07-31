@@ -1,1 +1,22 @@
 @import "bootstrap";
+
+html {
+  background-color: goldenrod;
+}
+
+.navbar {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  box-shadow: 0 1px 3px dimgray;
+  background: image_url('dark-honeycomb.png')
+}
+
+.navbar-dark a.navbar-brand {
+  font-weight: 400;
+  letter-spacing: 5px;
+  color: gold;
+}
+
+.navbar-dark a.navbar-brand:hover {
+  color: gold;
+  text-shadow: 0 0 .5em goldenrod, 0 0 1em goldenrod, 0 0 1.5em goldenrod, 0 0 2em goldenrod;
+}
