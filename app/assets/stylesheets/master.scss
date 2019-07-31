@@ -4,9 +4,12 @@ html {
   background-color: goldenrod;
 }
 
+body {
+  background: rgb(43, 43, 43);
+}
+
 .navbar {
   font-family: "Helvetica Neue", Helvetica, sans-serif;
-  box-shadow: 0 1px 3px dimgray;
   background: image_url('dark-honeycomb.png')
 }
 
@@ -19,4 +22,30 @@ html {
 .navbar-dark a.navbar-brand:hover {
   color: gold;
   text-shadow: 0 0 .5em goldenrod, 0 0 1em goldenrod, 0 0 1.5em goldenrod, 0 0 2em goldenrod;
+}
+
+.navbar-toggler {
+  background-color: rgb(43, 43, 43);
+}
+
+.hero {
+  background: image_url('hero.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 375px;
+}
+
+.frosty {
+  background: rgba(2, 2, 2, 0.4);
+}
+
+.frosty h1 {
+  font-weight: 100;
+  text-shadow: rgba(0, 0, 0, 0.95) 1px 1px 2px;
+}
+
+.frosty .btn {
+  border-radius: 0;
 }
