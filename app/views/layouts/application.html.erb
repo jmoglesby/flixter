@@ -11,52 +11,52 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-sm sticky-top navbar-dark bg-dark">
-      <%= link_to 'Flixter', root_path, class: 'navbar-brand' %>
+    <div id="content">
+      <nav class="navbar navbar-expand-sm sticky-top navbar-dark bg-dark">
+        <%= link_to 'Flixter', root_path, class: 'navbar-brand' %>
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#linkToggles" aria-controls="linkToggles" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#linkToggles" aria-controls="linkToggles" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="linkToggles">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <% if user_signed_in? %>
-              <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link' do %>
-                Log Out
+        <div class="collapse navbar-collapse" id="linkToggles">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <% if user_signed_in? %>
+                <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link' do %>
+                  Log Out
+                <% end %>
+              <% else %>
+                <%= link_to new_user_session_path, class: 'nav-link' do %>
+                  Log In
+                <% end %>              
               <% end %>
-            <% else %>
-              <%= link_to new_user_session_path, class: 'nav-link' do %>
-                Log In
-              <% end %>              
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link2</a>
-          </li>
-        </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link2</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="notice-box">
+        <% if notice.present? %>
+          <div class="alert alert-warning col-8 offset-2"><%= notice %></div>
+        <% end %>
+        <% if alert.present? %>
+          <div class="alert alert-danger col-8 offset-2"><%= alert %></div>
+        <% end %>
       </div>
-    </nav>
 
-    <div class="notice-box">
-      <% if notice.present? %>
-        <div class="alert alert-warning col-8 offset-2"><%= notice %></div>
-      <% end %>
-      <% if alert.present? %>
-        <div class="alert alert-danger col-8 offset-2"><%= alert %></div>
-      <% end %>
-    </div>
-
-    <div class="content">
       <%= yield %>
     </div>
-  </body>
 
-  <footer>
-    <div class="text-right h-100 p-2">
-      <small class="text-light font-italic">
-        A site coded by Jeremy Oglesby
-      </small>
+    <div id="footer">
+      <div class="container text-right h-100 p-3">
+        <small class="text-light font-italic">
+          A site coded by Jeremy Oglesby
+        </small>
+      </div>
     </div>
-  </footer>
+  </body>
 </html>
