@@ -15,9 +15,19 @@ body {
   font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: goldenrod;
+}
+
+a:hover {
+  text-decoration: none;
+  color: fuchsia;
+}
+
 .notice-box {
   position: absolute;
-  top: 10%;
+  top: 65px;
   z-index: 1000;
   width: 100%;
 }
@@ -86,6 +96,7 @@ body {
   background: rgb(49, 49, 49);
   border: 1px solid dimgray;
   padding: 10px;
+  margin: 20px 0;
 }
 
 #footer {
