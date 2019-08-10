@@ -58,13 +58,34 @@
 
     <div id="footer">
       <div class="container h-100 p-3">
-        <b>Teachers</b>
-        <br/>
-        <%= link_to 'Teach a Course', new_instructor_course_path %>
-        
-        <small class="text-light font-italic float-right">
-          A site coded by Jeremy Oglesby
-        </small>
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-3 mt-2">
+            <b>Teachers</b>
+            <br/>
+            <%= link_to 'Teach a Course', new_instructor_course_path %>
+            <br/>
+            <%= link_to 'View Dashboard', '#' %>
+          </div>
+          <div class="col-12 col-sm-6 col-md-3 mt-2">
+            <b>About</b>
+            <br/>
+            <%= link_to 'Team', '#' %>
+            <br/>
+            <%= link_to 'Careers', '#' %>
+          </div>
+          <div class="col-12 col-sm-6 col-md-3 mt-2">
+            <b>Contact</b>
+            <br/>
+            <%= link_to 'Email Us', '#' %>
+            <br/>
+            <span>Phoenix, AZ</span>
+          </div>
+          <div class="col-12 col-sm-6 col-md-3 mt-2">
+            <small class="text-light font-italic">
+              A site coded by Jeremy Oglesby
+            </small>
+          </div>
+        </div>
       </div>
     </div>
   </body>
