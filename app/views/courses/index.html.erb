@@ -6,19 +6,31 @@
     <hr />
 
     <% @courses.each do |course| %>
-      <h2 class="text-center">
+      <h3 class="text-center">
         <%= link_to course.title, course_path(course) %>
-      </h2>
+      </h3>
       <br />
       <div class="row">
-        <div class="col-sm-8 col-12">
+        <% if course.image.file %>
+          <div class="col-sm-4 col-12">
+            <%= image_tag course.image.to_s, class: 'img-thumbnail img-h-100' %>
+          </div>
+          <div class="col-sm-8 col-12">
+        <% else %>
+          <div class="col-12">
+        <% end %>
           <%= course.description %>
-        </div>
-        <div class="col-sm-4 col-12 text-center">
-          <%= link_to 'View', course_path(course), class: 'btn btn-warning btn-large' %>
+          <br/>
+          <br/>
+          <div class="w-100 text-right pr-3">
+            <%= link_to 'View', course_path(course), class: 'btn btn-warning btn-large' %>
+          </div>
         </div>
       </div>
       <br class="clr" />
+      <% unless course == @courses.last %>
+        <hr class="course-divider" />
+      <% end %>
     <% end %>
   </div>
 </div>

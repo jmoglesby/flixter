@@ -2,6 +2,11 @@
 
   <div class="booyah-box">
     <h1 class="text-center"><%= @course.title %></h1>
+    <% if @course.image.file %>
+      <div class="course-image">
+        <%= image_tag @course.image.to_s, class: 'img-fluid img-h-100' %>
+      </div>
+    <% end %>
 
     <br/>
 
