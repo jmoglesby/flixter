@@ -5,7 +5,14 @@
     <h1><%= @lesson.title %></h1>
     <h5><%= @lesson.subtitle %></h5>
     <br/>
-
-    <%= link_to 'Video', @lesson.video.to_s %>
+    <video id='my-video' class='video-js vjs-big-play-centered vjs-fluid' controls preload='auto' poster='<%= image_path('black.jpg') %>' data-setup='{}'>
+      <source src='<%= @lesson.video.to_s %>' type='video/mp4'>
+      <noscript>
+        <p class='vjs-no-js'>
+          To view this video please enable JavaScript, and consider upgrading to a web browser that
+          <a href='https://videojs.com/html5-video-support/' target='_blank'>supports HTML5 video</a>
+        </p>
+      </noscript>
+    </video>
   </div>
 </div>
