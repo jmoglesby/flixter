@@ -20,7 +20,7 @@
       <div class="col-12">
       <% end %>
         <% if current_user && current_user == @course.user %>
-          <%= link_to 'Administer', instructor_course_path(@course), class: 'btn btn-light btn-large float-right' %>
+          <%= link_to 'Manage', instructor_course_path(@course), class: 'btn btn-light btn-large float-right' %>
         <% end %>
         <span class="badge badge-warning">
           <%= number_to_currency(@course.cost) %>

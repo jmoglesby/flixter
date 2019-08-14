@@ -4,5 +4,8 @@
   <div class="booyah-box">
     <h1><%= @lesson.title %></h1>
     <h5><%= @lesson.subtitle %></h5>
+    <br/>
+
+    <%= link_to 'Video', @lesson.video.to_s %>
   </div>
 </div>
