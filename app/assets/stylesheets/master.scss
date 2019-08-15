@@ -108,11 +108,40 @@ hr {
   max-height: 100%;
 }
 
-.feature {
+.index-content {
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+.features-list {
   width: 100%;
   padding: 0;
   margin: 0;
 }
+
+.feature {
+  max-width: 100%;
+  -moz-box-shadow: 1px 1px 8px 0 black;
+  -webkit-box-shadow: 1px 1px 8px 0 black;
+  box-shadow: 1px 1px 8px 0 black;
+  background: rgb(70, 70, 70);
+  border: 1px solid dimgray;
+  padding: 10px;
+  margin: 20px 15px;
+}
+
+.feature h3 {
+  font-size: 4vw;
+}
+
+.feature hr {
+  width: 70%;
+}
+
+.feature p {
+  font-size: 2vw;
+}
+
 .booyah-box {
   -moz-box-shadow: 1px 1px 8px 0 black;
   -webkit-box-shadow: 1px 1px 8px 0 black;

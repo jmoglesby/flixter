@@ -33,26 +33,24 @@
 
     <br/>
 
-    <div class="row">
-      <div class="col-sm-4 col-12 text-center mb-2">
-        
-
-        
-      </div>
-
-    </div>
-
     <div class="col-12">
-      <% @course.sections.each do |section| %>
-        <div class="section">
-          <%= section.title %>
-          <% section.lessons.each do |lesson| %>
-            <div class="lesson">
-              <%= link_to lesson_path(lesson) do %>
-                <b><%= lesson.title %></b> - <%= lesson.subtitle %>
-              <% end %>
-            </div>
-          <% end %>
+      <% @course.sections.each_with_index do |section, index| %>
+        <div class="booyah-box section text-center">
+          <h4>Section <%= index + 1 %>: <%= section.title %></h4>
+          <div class="row">
+            <% section.lessons.each do |lesson| %>
+              <div class="lesson col-12 col-md-6 col-lg-4 col-xl-3">
+                <%= link_to lesson_path(lesson) do %>
+                  <div class="booyah-box">
+                    <b><%= lesson.title %></b>
+                    <hr class="lesson-hr"/>
+                    <%= lesson.subtitle %>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+          <br class="clr" />
         </div>
       <% end %>
     </div>
