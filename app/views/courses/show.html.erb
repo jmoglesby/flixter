@@ -19,12 +19,24 @@
 
       <div class="col-12">
       <% end %>
-        <% if current_user && current_user == @course.user %>
-          <%= link_to 'Manage', instructor_course_path(@course), class: 'btn btn-light btn-large float-right' %>
+        <% if current_user %>
+          <% if current_user == @course.user %>
+            <%= link_to 'Manage', instructor_course_path(@course), class: 'btn btn-light btn-large float-right' %>
+          <% else %>
+            <% if current_user.enrolled_in?(@course) %>
+              <span class="badge badge-warning">
+                Enrolled
+              </span>
+            <% else %>
+              <%= link_to 'Enroll', course_enrollments_path(@course), method: :post, class: 'btn btn-warning float-right' %>
+            <% end %>
+          <% end %>
         <% end %>
-        <span class="badge badge-warning">
-          <%= number_to_currency(@course.cost) %>
-        </span>
+        <% unless current_user.enrolled_in?(@course) %>
+          <span class="badge badge-warning">
+            <%= number_to_currency(@course.cost) %>
+          </span>
+        <% end %>
         <br />
         <br />
         <%= @course.description %>
