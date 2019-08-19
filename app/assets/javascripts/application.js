@@ -16,6 +16,6 @@
 //= require turbolinks
 //= require_tree .
 
-$(function () {
-  $(".notice-box").delay( 1500 ).slideUp();
+$( document ).on('turbolinks:load', function () {
+  $(".notice-box").delay( 2000 ).slideUp();
 });
