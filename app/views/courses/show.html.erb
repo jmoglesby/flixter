@@ -63,7 +63,7 @@
         <div class="booyah-box section text-center">
           <h4>Section <%= index + 1 %>: <%= section.title %></h4>
           <div class="row">
-            <% section.lessons.each do |lesson| %>
+            <% section.lessons.rank(:row_order).each do |lesson| %>
               <div class="lesson col-12 col-md-6 col-lg-4 col-xl-3">
                 <%= link_to lesson_path(lesson) do %>
                   <div class="booyah-box">
