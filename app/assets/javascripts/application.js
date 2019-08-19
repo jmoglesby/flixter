@@ -18,4 +18,8 @@
 
 $( document ).on('turbolinks:load', function () {
   $(".notice-box").delay( 2000 ).slideUp();
+
+  $('#enroll').click(function () {
+    console.log('button clicked button clicked');
+  });
 });

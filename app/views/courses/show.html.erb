@@ -29,16 +29,9 @@
               </span>
             <% else %>
               <% if @course.free? %>
-                <%= link_to 'Enroll', course_enrollments_path(@course), method: :post, class: 'btn btn-warning float-right', id: 'enroll' %>
+                <%= link_to 'Enroll', course_enrollments_path(@course), method: :post, class: 'btn btn-warning float-right' %>
               <% else %>
-                <%= form_tag course_enrollments_path(@course) do %>
-                  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button float-right"
-                          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                          data-email="<%= current_user.email %>"
-                          data-description="Enroll in: <%= @course.title %>"
-                          data-amount="<%= (@course.cost * 100).to_i %>"
-                          data-locale="auto"></script>
-                <% end %>
+                <button class='btn btn-warning float-right' id='enroll'>Enroll/Pay</button>
               <% end %>
             <% end %>
           <% end %>
