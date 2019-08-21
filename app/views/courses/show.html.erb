@@ -59,7 +59,7 @@
     <br/>
 
     <div class="col-12">
-      <% @course.sections.each_with_index do |section, index| %>
+      <% @course.sections.rank(:row_order).each_with_index do |section, index| %>
         <div class="booyah-box section text-center">
           <h4>Section <%= index + 1 %>: <%= section.title %></h4>
           <div class="row">

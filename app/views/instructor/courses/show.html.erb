@@ -21,9 +21,9 @@
     <br class="clr"/>
 
     <div class="container mt-3">
-      <ul>
-        <% @course.sections.each do |section| %>
-          <li>
+      <ul class="sections">
+        <% @course.sections.rank(:row_order).each do |section| %>
+          <li data-update-url="<%= instructor_section_path(section) %>">
             <%= section.title %>
             <%= link_to 'Add lesson...', new_instructor_section_lesson_path(section), class: 'float-right btn btn-warning btn-sm' %>
             <ul class="lessons">
@@ -33,10 +33,10 @@
                 </li>
               <% end %>
             </ul>
-            <br class="clr"/>
           </li>
         <% end %>
       </ul>
+      <br class="clr"/>
     </div>
   </div>
 
@@ -52,7 +52,17 @@
           dataType: 'json',
           data: { lesson: { row_order_position: ui.item.index() } }
         });
-        console.log(ui.item.index());
+      }
+    });
+
+    $('.sections').sortable({
+      update: function( event, ui ) {
+        $.ajax({
+          type: 'PUT',
+          url: ui.item.data('update-url'),
+          dataType: 'json',
+          data: { section: { row_order_position: ui.item.index() } }
+        });
       }
     });
   });
