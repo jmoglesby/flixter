@@ -20,3 +20,9 @@
 $( document ).on('turbolinks:load', function () {
   $(".notice-box").delay( 2000 ).slideUp();
 });
+
+$.ajaxSetup({
+  headers: {
+    'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+  }
+});
