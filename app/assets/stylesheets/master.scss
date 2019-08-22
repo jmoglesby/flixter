@@ -32,6 +32,18 @@ hr {
   border-bottom: 1px solid rgb(43, 43, 43);
 }
 
+ul {
+  list-style-type: none;
+}
+
+ul .header {
+  font-size: 25px;
+}
+
+.fa-reorder:hover {
+  cursor: move;
+}
+
 .course-divider {
   width: 90%;
   border: 0;
@@ -152,6 +164,47 @@ hr {
   margin: 20px 0;
 }
 
+.booyah-box .section {
+  background-color: rgb(70, 70, 70);
+}
+
+.section-li {
+  padding: 20px;
+}
+
+.lesson-li {
+  margin: 10px;
+  font-weight: 200;
+  font-size: 15px;
+}
+
+.lesson-li b {
+  font-size: 25px;
+  font-weight: 100;
+}
+
+.lesson-li p {
+  margin: 0;
+}
+
+.lesson-li hr {
+  margin-top: 2px;
+  margin-bottom: 8px;
+  width: 90%;
+}
+
+.lesson-handle {
+  padding: 0;
+}
+
+.course-info .col-sm-8 {
+  border-left: 1px solid lightgray;
+}
+
+.border-right {
+  border-right: 1px solid lightgray;
+}
+
 .clr {
   clear: both;
 }
@@ -166,8 +219,4 @@ hr {
 
 footer small {
   font-weight: 100;
-}
-
-.stripe-button-el {
-  float: right;
 }

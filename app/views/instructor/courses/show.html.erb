@@ -10,12 +10,19 @@
 
     <br/>
 
-    <div class="text-center">
-      <%= link_to 'Preview as student...', course_path(@course) %>
-    </div>
+    <div class="row">
+      <div class="col-sm-8 col-12 border-right mb-3">
+        <%= @course.description %>
+      </div>
+      <div class="col-sm-4 col-12">
+        <div class="text-center">
+          <%= link_to 'Preview as student...', course_path(@course), class: 'btn btn-light w-100 mb-2' %>
+        </div>
 
-    <div class="text-center">
-      <%= link_to 'Add a new section...', new_instructor_course_section_path(@course) %>
+        <div class="text-center">
+          <%= link_to 'Add a new section...', new_instructor_course_section_path(@course), class: 'btn btn-warning w-100' %>
+        </div>
+      </div>
     </div>
 
     <br class="clr"/>
@@ -23,13 +30,31 @@
     <div class="container mt-3">
       <ul class="sections">
         <% @course.sections.rank(:row_order).each do |section| %>
-          <li data-update-url="<%= instructor_section_path(section) %>">
-            <%= section.title %>
-            <%= link_to 'Add lesson...', new_instructor_section_lesson_path(section), class: 'float-right btn btn-warning btn-sm' %>
+          <li data-update-url="<%= instructor_section_path(section) %>" class="booyah-box section section-li">
+            <div class="header">
+              <i class="fa fa-reorder"></i>
+              <%= section.title %>
+              <%= link_to 'Add lesson...', new_instructor_section_lesson_path(section), class: 'float-right btn btn-warning btn-sm' %>
+              <br class="clr"/>
+            </div>
             <ul class="lessons">
               <% section.lessons.rank(:row_order).each do |lesson| %>
-                <li data-update-url="<%= instructor_lesson_path(lesson) %>">
-                  <b><%= lesson.title %></b> - <%= lesson.subtitle %>
+                <li data-update-url="<%= instructor_lesson_path(lesson) %>" class="booyah-box lesson-li">
+                  <div class="row">
+                    <div class="col-1 lesson-handle">
+                      <i class="fa fa-reorder fa-lg" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-11 text-center">
+                      <p>
+                        <b><%= lesson.title %></b>
+                      </p>
+                      <hr/>
+                      <p>
+                        <%= lesson.subtitle %>
+                      </p>
+                    </div>
+                  </div>
+                  <%# <br class="clr"/> %>
                 </li>
               <% end %>
             </ul>
