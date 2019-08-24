@@ -28,16 +28,24 @@
             </li>
           </ul>
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <% if user_signed_in? %>
-                <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link' do %>
-                  Log Out
+            <% if user_signed_in? %>
+              <li class="nav-item">
+                <%= link_to dashboard_path, class: 'nav-link' do %>
+                  <i class="fa fa-user-circle" aria-hidden="true"></i>
                 <% end %>
-              <% else %>
+              </li>
+              <li class="nav-item">
+                <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link' do %>
+                  Log Out <i class="fa fa-sign-out" aria-hidden="true"></i>
+                <% end %>
+              </li>
+            <% else %>
+              <li class="nav-item">
                 <%= link_to new_user_session_path, class: 'nav-link' do %>
-                  Log In
-                <% end %>              
-              <% end %>
+                  Log In <i class="fa fa-sign-in" aria-hidden="true"></i>
+                <% end %>          
+              </li>
+            <% end %>
             </li>
           </ul>
         </div>
