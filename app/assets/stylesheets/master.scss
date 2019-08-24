@@ -1,5 +1,3 @@
-@import "bootstrap";
-
 html {
   background-color: goldenrod;
   position: relative;
@@ -208,6 +206,19 @@ ul .header {
 
 .clr {
   clear: both;
+}
+
+.modal-content {
+  background-color: rgb(70, 70, 70);
+}
+
+.close {
+  color: white;
+  text-shadow: none;
+}
+
+.close:hover {
+  color: gold;
 }
 
 #footer {

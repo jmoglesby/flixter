@@ -1,24 +1,13 @@
 class Instructor::SectionsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_section, only: [:update]
-  before_action :set_course, only: [:new, :create]
-  before_action :require_authorized_for_course, only: [:new, :create]
+  before_action :set_course, only: [:create]
+  before_action :require_authorized_for_course, only: [:create]
   before_action :require_authorized_for_section, only: [:update]
-
-  def index
-  end
-
-  def new
-    @section = Section.new
-  end
 
   def create
     @section = @course.sections.create(section_params)
-
     redirect_to instructor_course_path(@course)
-  end
-
-  def show
   end
 
   def update

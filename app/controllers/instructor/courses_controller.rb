@@ -17,16 +17,7 @@ class Instructor::CoursesController < ApplicationController
   end
 
   def show
-    #this was an attempt to implement the newest Stripe conventions
-    # Stripe.api_key = ENV["STRIPE_SECRET_KEY"]
-    # @session = Stripe::Checkout::Session.create(
-    #   payment_method_types: ['card'],
-    #   line_items: [{
-
-    #   }],
-    #   success_url: '',
-    #   cancel_url: '',
-    # )
+    @section = Section.new
   end
 
   private #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

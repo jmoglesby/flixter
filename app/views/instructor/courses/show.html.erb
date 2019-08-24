@@ -20,7 +20,10 @@
         </div>
 
         <div class="text-center">
-          <%= link_to 'Add a new section...', new_instructor_course_section_path(@course), class: 'btn btn-warning w-100' %>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-warning w-100" data-toggle="modal" data-target="#newSectionModal">
+            Add a new section...
+          </button>
         </div>
       </div>
     </div>
@@ -65,6 +68,29 @@
     </div>
   </div>
 
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="newSectionModal" tabindex="-1" role="dialog" aria-labelledby="newSectionModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newSectionModalLabel">Add a new section</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <%= simple_form_for @section, url: instructor_course_sections_path(@course) do |f| %>
+        <div class="modal-body">
+          <%= f.input :title %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+          <%= f.submit 'Add section', class: 'btn btn-warning' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 <script>
