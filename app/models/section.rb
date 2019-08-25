@@ -9,4 +9,9 @@ class Section < ApplicationRecord
   def number_of_lessons
     lessons.count
   end
+
+  def next_section
+    next_section = course.sections.where("row_order > ?", self.row_order).rank(:row_order).first
+    return next_section
+  end
 end

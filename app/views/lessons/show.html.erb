@@ -3,7 +3,16 @@
 <div class="col-10 offset-1">
   <div class="booyah-box">
     <h1><%= @lesson.title %></h1>
-    <h5><%= @lesson.subtitle %></h5>
+    <h5 class="float-left"><%= @lesson.subtitle %></h5>
+
+    <% if @lesson.next_lesson.present? %>
+      <%= link_to lesson_path(@lesson.next_lesson), class: 'btn btn-warning float-right' do %>
+        Next lesson &nbsp;
+        <i class="fa fa-forward"></i>
+      <% end %>
+    <% end %>
+
+    <br class="clear"/>
     <br/>
     <video id='my-video' class='video-js vjs-big-play-centered vjs-fluid' controls preload='auto' poster='<%= image_path('black.jpg') %>' data-setup='{}'>
       <source src='<%= @lesson.video.to_s %>' type='video/mp4'>

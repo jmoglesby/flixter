@@ -5,4 +5,12 @@ class Lesson < ApplicationRecord
 
   include RankedModel
   ranks :row_order, with_same: :section_id
+
+  def next_lesson
+    next_lesson = section.lessons.where("row_order > ?", self.row_order).rank(:row_order).first
+    if next_lesson.blank? && section.next_section
+      return section.next_section.lessons.rank(:row_order).first
+    end
+    return next_lesson
+  end
 end
