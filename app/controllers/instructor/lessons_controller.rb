@@ -1,13 +1,9 @@
 class Instructor::LessonsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_lesson, only: [:update]
-  before_action :set_section, only: [:new, :create]
-  before_action :require_authorized_for_section, only: [:new, :create]
+  before_action :set_section, only: [:create]
+  before_action :require_authorized_for_section, only: [:create]
   before_action :require_authorized_for_lesson, only: [:update]
-  
-  def new
-    @lesson = Lesson.new
-  end
 
   def create
     @lesson = @section.lessons.create(lesson_params)
