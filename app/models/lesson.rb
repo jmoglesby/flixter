@@ -8,7 +8,7 @@ class Lesson < ApplicationRecord
 
   def next_lesson
     next_lesson = section.lessons.where("row_order > ?", self.row_order).rank(:row_order).first
-    if next_lesson.blank? && section.next_section
+    if next_lesson.blank? && section.next_section.present?
       return section.next_section.lessons.rank(:row_order).first
     end
     return next_lesson
