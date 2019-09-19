@@ -10,6 +10,7 @@ Most of the styling derives from Bootstrap, but with modifications in the CSS(SA
 *If you are checking the site out to evaluate my work, please feel free to create a user account and manipulate content.*
 
 **Rails Version: 5.2.3**
+
 **Ruby Version: 2.5.3**
 
 **Key Gems Used:**
